@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Events</title>
+</head>
+<body>
+    <input type = "number" id =  "a" placeholder="Enter 1st Number">
+    <input type = "number" id =  "b" placeholder="Enter 2nd Number">
+    <br><br>
+
+    <button onclick="add()">Add</button>
+    <button onclick="substract()">Substract</button>
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divide()">Divide</button>
+
+    <br><br>
+    <label id="Result" style="font-weight: bold ; font-size :larger">Result will be displayed here</label>
+
+    <!-- Now the script work starts from here -->
+
+    <script>
+        
+        function add() {
+        var a =  Number(document.getElementById("a").value)
+        var b = Number(document.getElementById("b").value)
+        document.getElementById("Result").innerHTML = "Addition is " +(a+b);
+        }
+        function substract() {  
+        var a =  Number(document.getElementById("a").value)
+        var b = Number(document.getElementById("b").value)
+        document.getElementById("Result").innerHTML = "Difference between "+a+" and " +b+ " is " +(a-b);
+        }
+        function multiply() {  
+        var a =  Number(document.getElementById("a").value)
+        var b = Number(document.getElementById("b").value)
+        document.getElementById("Result").innerHTML = "Product of  "+a+" and " +b+ " is " +(a*b);
+        }
+        function divide() {  
+        var a =  Number(document.getElementById("a").value)
+        var b = Number(document.getElementById("b").value)
+        document.getElementById("Result").innerHTML = "Division of  "+a+" by " +b+ " is " +(a/b);
+        }
+
+    </script>
+</body>
+</html>

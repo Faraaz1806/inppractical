@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <form onsubmit=" return formValidate()">
+        User ID : <input type = text id="user"name = "user id"> 
+        <br><br>
+        Password : <input type = password id="pass" name = "Password">
+        <br><br>
+        <input type = submit value = "Submit">
+        <input type = reset value = "Clear">
+        </form>
+
+        <script>
+            function formValidate(){
+                let username = document.getElementById("user").value
+                let password = document.getElementById("pass").value
+
+                if(username =="" || password ==""){
+                    alert("Please fill all the fields")
+                    return false;
+                }
+                else if(password.length < 8){
+                    alert("The length of password should be 8 characters")
+                    return false;
+                }
+                else{
+                    alert("Form is submitted successfully")
+                    return true
+                }
+            }
+
+        </script>
+    
+</body>
+</html>

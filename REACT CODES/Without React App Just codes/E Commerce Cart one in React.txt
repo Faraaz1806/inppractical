@@ -1,0 +1,33 @@
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
+
+function Product({ name, price, onAdd }) {
+  return (
+    <div style={{border: "1px solid gray", margin: "5px", padding: "10px", borderRadius: "10px"}}>
+      <h3>{name}</h3>
+      <p>Price: ₹{price}</p>
+      <button onClick={() => onAdd(price)}>Add to Cart</button>
+    </div>
+  );
+}
+
+function App() {
+  const [total, setTotal] = useState(0);
+
+  const addToCart = (price) => {
+    setTotal(total + price);
+  };
+
+  return (
+    <div>
+      <h2>🛍️ E-commerce Cart</h2>
+      <Product name="Shoes" price={1200} onAdd={addToCart} />
+      <Product name="Watch" price={1500} onAdd={addToCart} />
+      <Product name="T-Shirt" price={800} onAdd={addToCart} />
+      <h3>Total: ₹{total}</h3>
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Banking using OOP (ES6)</title>
+</head>
+<body>
+  <h2>Simple Bank System</h2>
+
+  <p>Account Holder: <span id="name"></span></p>
+  <p>Balance: ₹<span id="balance"></span></p>
+
+  <button onclick="acc.deposit(1000)">Deposit ₹1000</button>
+  <button onclick="acc.withdraw(500)">Withdraw ₹500</button>
+
+  <script>
+    // Step 1: Create a BankAccount class
+    class BankAccount {
+      constructor(name, balance) {
+        this.name = name;
+        this.balance = balance;
+      }
+
+      // Deposit method
+      deposit(amount) {
+        this.balance += amount;
+        this.showBalance();
+      }
+
+      // Withdraw method
+      withdraw(amount) {
+        if (amount <= this.balance) {
+          this.balance -= amount;
+        } else {
+          alert("Insufficient balance!");
+        }
+        this.showBalance();
+      }
+
+      // Show balance method
+      showBalance() {
+        document.getElementById("balance").textContent = this.balance;
+      }
+    }
+
+    // Step 2: Create an object of BankAccount
+    const acc = new BankAccount("Faraaz", 2000);
+
+    // Step 3: Show initial details
+    document.getElementById("name").textContent = acc.name;
+    acc.showBalance();
+  </script>
+</body>
+</html>

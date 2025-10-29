@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    body {
+      background-color: #eef;
+      font-family: Verdana;
+    }
+    .form-box {
+      width: 350px;
+      margin: 50px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+    }
+    input[type="submit"] {
+      background: #2196f3;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h2>Register</h2>
+    <form>
+      <input type="text" placeholder="Name" required><br>
+      <select>
+        <option>Select City</option>
+        <option>Surat</option>
+        <option>Mumbai</option>
+        <option>Delhi</option>
+      </select><br>
+      <input type="radio" name="gender"> Male
+      <input type="radio" name="gender"> Female<br><br>
+      <input type="submit" value="Register">
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+
+
+-----------COPY THIS CODE IN APP.JSX AFTER CREATING REACT + VITE APP PROJECT----------------------
+
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
+
+function MyCart() {
+  const [count, setCount] = useState(0); // useState hook
+
+  return (
+    <div>
+      <h2>🛒 MyCart</h2>
+      <p>Items in cart: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Add Item</button>
+      <button onClick={() => setCount(count - 1)}>Remove Item</button>
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<MyCart />);
+
